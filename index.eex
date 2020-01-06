@@ -21,7 +21,17 @@
       <%= for {section, i} <- Enum.with_index(@sections) do %>
       <div class="section">
         <h2><%= section.section_name %></h2>
-        <%=  %>
+        <%= for category <- section.list do %>
+
+          <h3><%= category.name %></h3>
+          <%= for entry <- category.entries do %>
+            <div class="entry">
+              <a href="<%= entry.url %>">
+                <%= entry.num %> <%= entry.type %>
+              </a>
+            </div>
+          <% end %>
+        <% end %>
       </div>
       <% end %>
     </div>

@@ -4,7 +4,7 @@ defmodule Markdown.Sections do
   @doc """
   A list of entries, by section.
   {
-    [
+    list: [
       %{entries: [%{num: 1, ...}], name: "GeoNames API client"},
       %{entries: [%{...}], name: "Git hosting (GitHub)"},
       %{entries: [...], ...},
