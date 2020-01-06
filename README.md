@@ -1,21 +1,20 @@
 # Website
 
-**TODO: Add description**
+To suggest a change to the list, open a pull request on Github [this project](https://github.com/szTheory/elixirlibs).
 
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `bestlibwebsite` to your list of dependencies in `mix.exs`:
+by adding `elixirlibswebsite` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:bestlibwebsite, "~> 0.1.0"}
+    {:elixirlibswebsite, "~> 0.1.0"}
   ]
 end
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/bestlibwebsite](https://hexdocs.pm/bestlibwebsite).
-
+be found at [https://hexdocs.pm/elixirlibswebsite](https://hexdocs.pm/elixirlibswebsite).

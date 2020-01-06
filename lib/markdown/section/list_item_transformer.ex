@@ -7,7 +7,6 @@ defmodule Markdown.Section.ListItemTransformer do
   end
 
   defp expand_list_item(category_name, list_item) do
-    # IO.inspect(list_item)
     name = Map.get(list_item, :name)
     type = if Regex.match?(~r/\[erl/, name), do: :erlang, else: :elixir
     num = num_from_name(name)

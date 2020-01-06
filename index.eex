@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The Elixir Toolbox</title>
+    <meta content="Curated libraries by category" name="description">
+  </head>
+  <body>
+    <h1>The Elixir Toolbox</h1>
+    <div id="sections-nav">
+      <%= for {section, i} <- Enum.with_index(@sections) do %>
+      <div class="section">
+        <a href="#section-<%= i %>">
+          <%= section.section_name %>
+        </a>
+      </div>
+      <% end %>
+    </div>
+
+    <div id="sections">
+      <%= for {section, i} <- Enum.with_index(@sections) do %>
+      <div class="section">
+        <h2><%= section.section_name %></h2>
+
+        
+      </div>
+      <% end %>
+    </div>
+  </body>
+</html>

@@ -2,15 +2,11 @@ defmodule Markdown.Sections do
   alias Markdown.Section
 
   def list do
-    # IO.puts(MarkdownBuilder.build())
-    markdown_sections()
-    |> IO.inspect()
-
     markdown_sections()
   end
 
   defp markdown_sections do
-    Markdown.Builder.build()
+    Markdown.Builder.build_markdown()
     |> split_by_section
     |> Enum.chunk_every(2)
     |> Enum.map(&%{section: List.first(&1), list: List.last(&1)})

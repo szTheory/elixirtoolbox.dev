@@ -2,7 +2,7 @@ defmodule Markdown.Builder do
   @text_after_header "## General Libraries"
   @text_footer_start "---"
 
-  def build do
+  def build_markdown do
     readme_text()
     |> without_header
     |> without_footer
