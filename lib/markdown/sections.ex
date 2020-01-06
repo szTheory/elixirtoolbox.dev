@@ -1,6 +1,24 @@
 defmodule Markdown.Sections do
   alias Markdown.Section
 
+  @doc """
+  A list of entries, by section.
+  {
+    [
+      %{entries: [%{num: 1, ...}], name: "GeoNames API client"},
+      %{entries: [%{...}], name: "Git hosting (GitHub)"},
+      %{entries: [...], ...},
+      %{...},
+      ...
+    ],
+    section_name: "API Clients"
+  }
+
+  Each entry looks like this.
+  %{num: 1, type: :elixir, url: "https://hex.pm/packages/mandrill"}
+
+  Entries are sorted by :num within their type (:elixir or :erlang)
+  """
   def list do
     markdown_sections()
   end
