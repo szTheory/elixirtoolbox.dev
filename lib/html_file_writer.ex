@@ -6,7 +6,7 @@ defmodule HtmlFileWriter do
   end
 
   defp html do
-    MarkdownBuilder.build()
+    Markdown.Builder.build()
     |> DomBuilder.build()
   end
 end

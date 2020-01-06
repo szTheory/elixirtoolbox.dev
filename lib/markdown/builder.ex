@@ -1,4 +1,4 @@
-defmodule MarkdownBuilder do
+defmodule Markdown.Builder do
   @text_after_header "## General Libraries"
   @text_footer_start "---"
 
