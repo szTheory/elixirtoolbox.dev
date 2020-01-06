@@ -1,6 +1,10 @@
 # Website
 
-To suggest a change to the list, open a pull request on Github [this project](https://github.com/szTheory/elixirlibs).
+Website for https://elixirlibs.com, a curated list of Elixir libraries.
+
+## Suggest a change
+
+Simply open a request on [this Github project](https://github.com/szTheory/elixirlibs) with your edit.
 
 ## Installation
 
