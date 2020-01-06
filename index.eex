@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>The Elixir Toolbox</title>
     <meta content="Curated libraries by category" name="description">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
   <body>
     <h1>The Elixir Toolbox</h1>
@@ -23,12 +24,14 @@
         <h2><%= section.section_name %></h2>
         <%= for category <- section.list do %>
 
-          <h3><%= category.name %></h3>
+          <h5><%= category.name %></h5>
           <%= for entry <- category.entries do %>
             <div class="entry">
               <a href="<%= entry.url %>">
-                <%= entry.num %> <%= entry.type %>
+                <%= icon_name = if entry.type === :elixir, do: "ex", else: "erl" %>
               </a>
+              <img src="img/<%= icon_name %>.png" width="16" height="16" class="icon-<%= entry.type %>">
+              <%= entry.num %> <%= entry.type %>
             </div>
           <% end %>
         <% end %>
