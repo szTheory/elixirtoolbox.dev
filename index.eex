@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>ElixirLibs</title>
     <meta content="Curated libraries by category" name="description">
+    <link href="//fonts.googleapis.com/css?family=Bitter|Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
   <body>
@@ -21,7 +22,7 @@
     <div id="sections">
 
       <%= for {section, i} <- Enum.with_index(@sections) do %>
-        <div class="section">
+        <div class="section" id="section-<%= i %>">
           <h2 class="section-name"><%= section.section_name %></h2>
 
           <%= for category <- section.list do %>
