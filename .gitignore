@@ -24,4 +24,4 @@ elixirlibswebsite-*.tar
 
 
 .elixir_ls
-build/
+# build/
