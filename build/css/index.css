@@ -224,3 +224,11 @@ a {
 	margin-top: 8px;
 }
 
+footer {
+	padding: 20px 10px;
+}
+
+footer a {
+	font-family: Lato,sans-serif;
+	color: #4e2a8e;
+}

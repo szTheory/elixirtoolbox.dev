@@ -66,7 +66,9 @@
     </div>
 
     <footer>
-
+      <a href="https://github.com/szTheory/elixirlibs">Suggest an edit</a>
+      <code class="separator">▷</code>
+      <a href="https://github.com/szTheory/elixirlibs.com">Website source</a>
     </footer>
   </body>
 </html>
