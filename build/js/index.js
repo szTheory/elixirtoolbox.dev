@@ -53,28 +53,41 @@ function setProjectVisibility({ project, visible }) {
   }
 }
 
+function matchingProjectElems({ query }) {
+  const elems = document.querySelectorAll('[data-search*="' + query + '"]');
+  return elems;
+}
+
+function showProjects({ projects }) {
+  projects.forEach(function(project) {
+    setProjectVisibility({ project: project, visible: true });
+  });
+}
+function hideProjects({ projects }) {
+  projects.forEach(function(project) {
+    setProjectVisibility({ project: project, visible: false });
+  });
+}
+
+// TODO: make this more efficient. Right now it just hides
+// all entries, then shows the ones matching.
+function showMatchingProjects({ projects, query }) {
+  // hide all entries
+  hideProjects({ projects: projects });
+
+  // show matching entries
+  showProjects({ projects: matchingProjectElems({ query: query }) });
+}
+
 // SEARCH BAR UPDATE
 const SELECTOR_ENTRIES = ".category .entry";
 function updateInputCallback(event) {
   const query = event.target.value.toLowerCase().trim();
   const projects = document.querySelectorAll(SELECTOR_ENTRIES);
 
-  if (query === "") {
-    projects.forEach(function(project) {
-      setProjectVisibility({ project: project, visible: true });
-    });
-  } else {
-    projects.forEach(function(project) {
-      setProjectVisibility({ project: project, visible: false });
-    });
-
-    const searchProjects = document.querySelectorAll(
-      '[data-search*="' + query + '"]'
-    );
-    searchProjects.forEach(function(project) {
-      setProjectVisibility({ project: project, visible: true });
-    });
-  }
+  query === ""
+    ? showProjects({ projects: projects })
+    : showMatchingProjects({ projects: projects, query: query });
 }
 
 // DEBOUNCE
