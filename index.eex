@@ -8,15 +8,24 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
   <body>
-    <h1>ElixirLibs</h1>
-    <div id="sections-nav">
-      <%= for {section, i} <- Enum.with_index(@sections) do %>
-      <div class="section">
-        <a href="#section-<%= i %>">
-          <%= section.section_name %>
-        </a>
+    <nav>
+      <h1>ElixirLibs</h1>
+    </nav>
+
+    <main>
+
+    <div id="form-wrapper">
+      <form>
+        <input type="text" placeholder="Search for libraries">
+      </form>
+
+      <div id="sections-nav">
+        <%= for {section, i} <- Enum.with_index(@sections) do %>
+          <a href="#section-<%= i %>" class='section'><%= section.section_name %></a><%= if i < length(@sections)-1 do %>
+            <code class="separator">|></code>
+          <% end %>
+        <% end %>
       </div>
-      <% end %>
     </div>
 
     <div id="sections">
@@ -46,7 +55,7 @@
 
         </div>
       <% end %>
-
+      </main>
     </div>
   </body>
 </html>
