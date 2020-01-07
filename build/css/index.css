@@ -263,7 +263,8 @@ a#toggle-night-mode img {
 	height: 16px;
 }
 
-nav a {
+nav a,
+footer a {
 	font-family: Lato,sans-serif;
 	color: #4e2a8e;
 }
@@ -271,17 +272,6 @@ nav a {
 footer {
 	padding: 20px 10px;
 }
-
-nav a
-footer a {
-	font-family: Lato,sans-serif;
-	color: #4e2a8e;
-}
-
-/* .btn {
-	border-radius: 4px;
-
-} */
 
 /* DARK MODE */
 @media (prefers-color-scheme: dark) {
