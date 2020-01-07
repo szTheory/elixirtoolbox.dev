@@ -14,11 +14,13 @@ defmodule Mix.Tasks.Generate do
     Markdown.Sections.list()
   end
 
+  @spec generate_html!(list(any)) :: list(any)
   defp generate_html!(sections_list) do
     HtmlFileWriter.write!(sections_list)
     sections_list
   end
 
+  @spec generate_json!(list(any)) :: list(any)
   defp generate_json!(sections_list) do
     JsonFileWriter.write!(sections_list)
     sections_list

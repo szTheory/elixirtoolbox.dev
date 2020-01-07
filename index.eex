@@ -10,8 +10,8 @@
   </head>
   <body>
     <nav>
-      <a id="toggle-night-mode" href="#toggle-night-mode" class="btn">
-        <img src="img/moon.png">
+      <a id="toggle-night-mode" class="btn" href="">
+        <img src="">
       </a>
     </nav>
 
