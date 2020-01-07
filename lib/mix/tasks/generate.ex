@@ -4,5 +4,6 @@ defmodule Mix.Tasks.Generate do
   @shortdoc "Generate the website."
   def run(_) do
     HtmlFileWriter.write!()
+    JsonFileWriter.write!()
   end
 end

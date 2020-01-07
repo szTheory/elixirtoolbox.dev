@@ -25,3 +25,4 @@ elixirlibswebsite-*.tar
 
 .elixir_ls
 build/index.html
+build/index.json

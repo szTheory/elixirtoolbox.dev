@@ -74,9 +74,9 @@ const debounceEvent = (callback, time = 250, interval) => (...args) =>
 
 function searchBarInit() {
   const formInput = document.querySelector(FORM_INPUT_ID);
-  const debouncedCallback = debounceEvent(updateInputCallback, 40);
+  const debouncedCallback = debounceEvent(updateInputCallback, 20);
   ["change", "keyup", "paste", "input"].forEach(function(eventName) {
-    formInput.addEventListener(eventName, updateInputCallback);
+    formInput.addEventListener(eventName, debouncedCallback);
   });
 }
 
