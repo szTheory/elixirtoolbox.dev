@@ -5,7 +5,8 @@
     <title>ElixirLibs</title>
     <meta content="Curated libraries by category" name="description">
     <link href="//fonts.googleapis.com/css?family=Bitter|Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href="css/index.css" rel="stylesheet" >
+    <script src="js/index.js" async defer></script>
   </head>
   <body>
     <main>
@@ -20,7 +21,7 @@
       </div>
 
       <form>
-        <input type="text" placeholder="Search for libraries">
+        <input id="search-query" type="text" placeholder="Search for libraries">
       </form>
 
       <div id="sections-nav">
@@ -44,7 +45,9 @@
 
               <%= for {entry, j} <- Enum.with_index(category.entries) do %>
                 <% is_main = j === 0 %>
-                <div class="<%= if is_main, do: "main", else: "alt" %>">
+                <div class="entry <%= if is_main, do: "main", else: "alt" %>"
+                  data-search="<%= String.downcase(entry.name) %>
+                               <%= String.downcase(category.name) %>">
                   <% icon_name = if entry.type === :elixir, do: "ex", else: "erl" %>
                   <% size_px = if j === 0, do: 20, else: 20 %>
 
@@ -61,5 +64,9 @@
       <% end %>
       </main>
     </div>
+
+    <footer>
+
+    </footer>
   </body>
 </html>

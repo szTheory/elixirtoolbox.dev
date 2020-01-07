@@ -200,6 +200,10 @@ a {
 	margin-bottom: 4px;
 }
 
+.category.hide {
+	display: none;
+}
+
 .category .category-name {
 	color: #333;
 	text-decoration: none;
