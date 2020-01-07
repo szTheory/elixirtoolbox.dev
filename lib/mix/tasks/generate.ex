@@ -3,7 +3,10 @@ defmodule Mix.Tasks.Generate do
 
   @shortdoc "Generate the website."
   def run(_) do
-    HtmlFileWriter.write!()
-    JsonFileWriter.write!()
+    Markdown.Sections.list()
+    |> HtmlFileWriter.write!()
+    |> JsonFileWriter.write!()
+
+    IO.puts("DONE: Generated index.html and index.json")
   end
 end

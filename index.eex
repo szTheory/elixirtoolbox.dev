@@ -27,7 +27,7 @@
       <div id="sections-nav">
         <%= for {section, i} <- Enum.with_index(@sections) do %>
           <a href="#section-<%= i %>" class='section'><%= section.section_name %></a><%= if i < length(@sections)-1 do %>
-            <code class="separator">|></code>
+            <code class="separator">▷</code>
           <% end %>
         <% end %>
       </div>

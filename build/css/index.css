@@ -60,15 +60,15 @@ nav {
 #sections-nav {
 	text-align: center;
 	margin: 0 auto;
-	margin-top: 10px;
+	margin-top: 12px;
 }
 #sections-nav a {
 	color: #4e2a8e;
 	display: inline;
 }
 #sections-nav .separator {
-	margin-left: 4px;
-	margin-right: 4px;
+	margin-left: 0px;
+	margin-right: 0px;
 	/* font-family: 'Courier New', Courier, monospace; */
 }
 
@@ -137,11 +137,12 @@ img#logo, .text {
 }
 #title { 
 	clear: both;
+	position: relative;
+	bottom: 10px;
 }
 #title h1 {
 	margin-top: 41px;
 	font-size: 56px;
-	/* font-family: Helvetica; */
 	font-family: 'Bitter', Georgia, 'Times New Roman', Times, serif;
 	color: #333;
 }
