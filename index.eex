@@ -21,7 +21,7 @@
       </div>
 
       <form>
-        <input id="search-query" type="text" placeholder="Search for libraries">
+        <input id="search-query" type="text" placeholder="Search for libraries" autofocus>
       </form>
 
       <div id="sections-nav">
