@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>The Elixir Toolbox</title>
+    <title>ElixirLibs</title>
     <meta content="Curated libraries by category" name="description">
     <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
   <body>
-    <h1>The Elixir Toolbox</h1>
+    <h1>ElixirLibs</h1>
     <div id="sections-nav">
       <%= for {section, i} <- Enum.with_index(@sections) do %>
       <div class="section">
@@ -19,24 +19,33 @@
     </div>
 
     <div id="sections">
-      <%= for {section, i} <- Enum.with_index(@sections) do %>
-      <div class="section">
-        <h2><%= section.section_name %></h2>
-        <%= for category <- section.list do %>
 
-          <h5><%= category.name %></h5>
-          <%= for entry <- category.entries do %>
-            <div class="entry">
-              <a href="<%= entry.url %>">
-                <%= icon_name = if entry.type === :elixir, do: "ex", else: "erl" %>
-              </a>
-              <img src="img/<%= icon_name %>.png" width="16" height="16" class="icon-<%= entry.type %>">
-              <%= entry.num %> <%= entry.type %>
+      <%= for {section, i} <- Enum.with_index(@sections) do %>
+        <div class="section">
+          <h2 class="section-name"><%= section.section_name %></h2>
+
+          <%= for category <- section.list do %>
+            <div class="category">
+              <h5 class="category-name"><%= category.name %></h5>
+
+              <%= for {entry, j} <- Enum.with_index(category.entries) do %>
+                <% is_main = j === 0 %>
+                <div class="<%= if is_main, do: "main", else: "alt" %>">
+                  <% icon_name = if entry.type === :elixir, do: "ex", else: "erl" %>
+                  <% size_px = if j === 0, do: 20, else: 20 %>
+
+                  <img src="img/<%= icon_name %>.png" width="<%= size_px %>" height="<%= size_px %>" class="icon-<%= entry.type %>"><a href="<%= entry.url %>" class="project-link <%= if is_main, do: "main", else: "alt" %>">
+                    <%= if is_main, do: "Top pick", else: "Alternative" %>
+                  </a>
+                </div>
+              <% end %>
+
             </div>
           <% end %>
-        <% end %>
-      </div>
+
+        </div>
       <% end %>
+
     </div>
   </body>
 </html>
