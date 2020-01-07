@@ -191,9 +191,10 @@ function setDarkModeIcon({ isDark }) {
 // to track the theme between page loads
 function toggleDarkMode() {
   const newIsDark = !isDarkMode();
+  // toggle icon first for responsive UI
+  setDarkModeIcon({ isDark: newIsDark });
   setDarkModeUserSetting({ isDark: newIsDark });
   setDomDarkModeSetting({ isDark: newIsDark });
-  setDarkModeIcon({ isDark: newIsDark });
 }
 // DARK MODE CLICK INIT
 function darkModeClickCallbackSetup() {
