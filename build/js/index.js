@@ -1,3 +1,5 @@
+// Run function once DOM is ready.
+// Works with async loaded scripts.
 const runWithDelay = function({ callbackFunction }) {
   run({
     callbackFunction: function() {
@@ -8,12 +10,14 @@ const runWithDelay = function({ callbackFunction }) {
   });
 };
 
+// Run function on a delay after DOM is ready.
+// Works with async loaded scripts.
 const runAsap = function({ callbackFunction }) {
   runWithDelay({ callbackFunction: callbackFunction, delay: 0 });
 };
 
-// if already fired run callback immediately
-// otherwise wait for DOM to finish loading
+// If already fired run callback immediately
+// otherwise wait for DOM to finish loading.
 // source: https://stackoverflow.com/a/50026257
 function run({ callbackFunction }) {
   if (
@@ -67,7 +71,7 @@ function updateInputCallback(event) {
   }
 }
 
-// Debounce
+// Debounce any function with specified interval.
 // source: https://gist.github.com/nmsdvid/8807205
 const debounceEvent = (callback, time = 250, interval) => (...args) =>
   clearTimeout(interval, (interval = setTimeout(callback, time, ...args)));
@@ -80,6 +84,17 @@ function searchBarInit() {
   });
 }
 
+// The form is only used to filter results as the user types.
+// There is no server-side component to submit to.
+function preventFormSubmit() {
+  const form = document.querySelector("form");
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    return false;
+  });
+}
+
+// Setup a click handler for the sun/moon icon to toggle night mode.
 function toggleNightModeInit() {
   const toggleElem = document.querySelector("#toggle-night-mode");
   toggleElem.addEventListener("click", event => {});
@@ -88,6 +103,6 @@ function toggleNightModeInit() {
 function init() {
   runAsap({ callbackFunction: searchBarInit });
   runAsap({ callbackFunction: toggleNightModeInit });
+  runAsap({ callbackFunction: preventFormSubmit });
 }
-
 init();

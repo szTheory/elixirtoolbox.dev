@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>ElixirLibs | Curated list of libraries</title>
-    <meta content="Curated libraries by category" name="description">
-    <link href="//fonts.googleapis.com/css?family=Bitter|Lato&display=swap" rel="stylesheet">
+    <meta content="A curated list of Elixir libraries by category" name="description">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Lato&display=swap" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet" >
     <script src="js/index.js" async defer></script>
   </head>
   <body>
-    <%# <nav>
+    <nav>
       <a id="toggle-night-mode" href="#toggle-night-mode" class="btn">
         <img src="img/moon.png">
       </a>
-    </nav> %>
+    </nav>
 
     <main>
 
@@ -58,7 +58,7 @@
                   data-search="<%= String.downcase(entry.name) %>
                                <%= String.downcase(category.name) %>">
                   <% icon_name = if entry.type === :elixir, do: "ex", else: "erl" %>
-                  <% size_px = if j === 0, do: 20, else: 20 %>
+                  <% size_px = 20 %>
 
                   <img src="img/<%= icon_name %>.png" width="<%= size_px %>" height="<%= size_px %>" class="icon-<%= entry.type %>"><a href="<%= entry.url %>" class="project-link <%= if is_main, do: "main", else: "alt" %>">
                     <%= entry.name %>

@@ -306,7 +306,8 @@ footer {
 		color: #D2D2D2 !important;
 	}
 	.category a {
-		color: #B4B4B4;
+		/* color: #B4B4B4; */
+		color: #e6db74;
 	}
 }
 @media (prefers-color-scheme: light) {
