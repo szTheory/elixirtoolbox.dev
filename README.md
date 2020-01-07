@@ -1,4 +1,4 @@
-# Website
+# ElixirLibs Website
 
 Website for https://elixirlibs.com, a curated list of Elixir libraries. Inspired by [Ruby Toolbox](https://ruby-toolbox.com) and [Clojure Toolbox](https://clojure-toolbox.com).
 
