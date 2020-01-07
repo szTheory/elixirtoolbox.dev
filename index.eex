@@ -9,11 +9,20 @@
     <script src="js/index.js" async defer></script>
   </head>
   <body>
+    <%# <nav>
+      <a id="toggle-night-mode" href="#toggle-night-mode" class="btn">
+        <img src="img/moon.png">
+      </a>
+    </nav> %>
+
     <main>
 
     <div id="form-wrapper">
       <div id="title">
-        <img src="img/logo.png" id="logo">
+        <div id='logo-container'>
+          <img src="img/logo.png" class="logo main">
+          <img src="img/logo.png" class="logo glow">
+        </div>
         <div class="text">
           <h1>ElixirLibs</h1>
           <p>A curated list of libraries</p>

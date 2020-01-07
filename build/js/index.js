@@ -80,8 +80,14 @@ function searchBarInit() {
   });
 }
 
+function toggleNightModeInit() {
+  const toggleElem = document.querySelector("#toggle-night-mode");
+  toggleElem.addEventListener("click", event => {});
+}
+
 function init() {
   runAsap({ callbackFunction: searchBarInit });
+  runAsap({ callbackFunction: toggleNightModeInit });
 }
 
 init();

@@ -51,11 +51,6 @@ table {
 
 
 /* APP STYLESHETS */
-nav {
-	background-color: #373f52;
-	width: 100%;
-	position: absolute;
-}
 
 #sections-nav {
 	text-align: center;
@@ -129,12 +124,46 @@ form input {
 	background-color: rgba(255,255,255,0.2);
 }
 
-img#logo {
+img.logo {
 	max-width: 200px;
 }
-img#logo, .text {
+#logo-container, .text {
 	float: left;
 }
+
+#logo-container {
+	position: relative;
+  width: 200px;
+  height: 130px;
+}
+
+img.main,
+img.glow {
+  position:absolute;
+  max-height:90%;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+}
+
+img.main {
+  z-index:2;
+}
+/* glow effect source: https://jsfiddle.net/nkq1uxfb/3/ */
+img.glow {
+	display: none;
+  z-index:1;
+  transform: scale(1.01) translate(-50%, -50%);
+  -webkit-transform: scale(1.01) translate(-50%, -50%);
+  filter: brightness(0) invert(1) blur(3px);
+  -webkit-filter: brightness(0) invert(1) blur(3px);
+}
+
+
+
 #title { 
 	clear: both;
 	position: relative;
@@ -201,7 +230,7 @@ a {
 	margin-bottom: 4px;
 }
 
-.category.hide {
+.hide {
 	display: none;
 }
 
@@ -224,11 +253,73 @@ a {
 	margin-top: 8px;
 }
 
+nav {
+	padding: 20px 10px;
+	text-align: right;
+}
+
+a#toggle-night-mode img {
+	width: 16px;
+	height: 16px;
+}
+
+nav a {
+	font-family: Lato,sans-serif;
+	color: #4e2a8e;
+}
+
 footer {
 	padding: 20px 10px;
 }
 
+nav a
 footer a {
 	font-family: Lato,sans-serif;
 	color: #4e2a8e;
+}
+
+/* .btn {
+	border-radius: 4px;
+
+} */
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #212127;
+	}
+	.section .section-name {
+		color: #D2D2D2;
+	}
+	#title h1,
+	#title p {
+		color: #D2D2D2;
+	}
+	footer a,
+	#sections-nav a,
+	footer .separator,
+	#sections-nav .separator {
+		color: #D2D2D2;
+	}
+	footer .separator,
+	#sections-nav .separator {
+		opacity: 0.2;
+	}
+	img.glow {
+		display: block;
+		opacity: 1;
+	}
+	.category {
+		background-color: #2C2C31;
+	}
+	.category-name {
+		color: #D2D2D2 !important;
+	}
+	.category a {
+		color: #B4B4B4;
+	}
+}
+@media (prefers-color-scheme: light) {
+	body {
+	}
 }
