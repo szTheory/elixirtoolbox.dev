@@ -8,7 +8,7 @@ defmodule ListItemHtmlParser do
   def hash_from_list_item_html(html) do
     list = base_list_items(html)
     category_name = category_name(list)
-    entries = transform_base_list(list, category_name)
+    entries = transform_base_list(list)
 
     %{name: category_name, entries: entries}
   end
@@ -23,8 +23,7 @@ defmodule ListItemHtmlParser do
     |> Map.get(:name)
   end
 
-  defp transform_base_list(list, category_name) do
-    list
-    |> ListItemTransformer.transform_base_list(category_name)
+  defp transform_base_list(list) do
+    ListItemTransformer.transform_base_list(list)
   end
 end

@@ -35,7 +35,7 @@
                   <% size_px = if j === 0, do: 20, else: 20 %>
 
                   <img src="img/<%= icon_name %>.png" width="<%= size_px %>" height="<%= size_px %>" class="icon-<%= entry.type %>"><a href="<%= entry.url %>" class="project-link <%= if is_main, do: "main", else: "alt" %>">
-                    <%= if is_main, do: "Top pick", else: "Alternative" %>
+                    <%= entry.name %>
                   </a>
                 </div>
               <% end %>
