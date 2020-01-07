@@ -10,6 +10,7 @@
   </head>
   <body>
     <nav>
+      <a href="https://github.com/szTheory/elixirlibs" class="edit">Submit a change</a>
       <a id="toggle-night-mode" class="btn" href="">
         <img src="">
       </a>
@@ -75,8 +76,6 @@
     </div>
 
     <footer>
-      <a href="https://github.com/szTheory/elixirlibs">Suggest an edit</a>
-      <code class="separator">▷</code>
       <a href="https://github.com/szTheory/elixirlibs.com">Website source</a>
       <code class="separator">▷</code>
       <a href="index.json">JSON API</a>

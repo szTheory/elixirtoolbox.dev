@@ -257,6 +257,11 @@ nav {
 	padding: 20px 10px;
 	text-align: right;
 }
+nav a.edit {
+	position: relative;
+	bottom: 3px;
+	right: 6px;
+}
 
 a#toggle-night-mode img {
 	width: 16px;
@@ -307,6 +312,7 @@ html[data-dark-mode-theme=dark] #title p {
 	}
 }
 
+html[data-dark-mode-theme=dark] nav a,
 html[data-dark-mode-theme=dark] footer a,
 html[data-dark-mode-theme=dark] #sections-nav a,
 html[data-dark-mode-theme=dark] footer .separator,
@@ -314,6 +320,7 @@ html[data-dark-mode-theme=dark] #sections-nav .separator {
 	color: #D2D2D2;
 }
 @media (prefers-color-scheme: dark) {
+	html:not([data-dark-mode-theme=light]) nav a,
 	html:not([data-dark-mode-theme=light]) footer a,
 	html:not([data-dark-mode-theme=light]) #sections-nav a,
 	html:not([data-dark-mode-theme=light]) footer .separator,
