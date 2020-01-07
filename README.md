@@ -6,6 +6,10 @@ Website for https://elixirlibs.com, a curated list of Elixir libraries. Inspired
 
 Simply open a request on [this Github project](https://github.com/szTheory/elixirlibs) with your edit.
 
+## JSON API
+
+A JSON API is available here https://elixirlibs.com/index.json
+
 ## Build website
 
 To build the website, run this command.
