@@ -24,6 +24,7 @@ defmodule Markdown.Sections do
   end
 
   defp markdown_sections do
+    # TODO: alphabetically sort by category name within each section
     Markdown.Builder.build_markdown()
     |> split_by_section
     |> Enum.chunk_every(2)
