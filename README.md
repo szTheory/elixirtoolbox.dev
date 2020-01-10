@@ -4,7 +4,7 @@ Website for https://elixirlibs.com, a curated list of Elixir libraries. Inspired
 
 ## Suggest a change
 
-Simply open a request on [this Github project](https://github.com/szTheory/elixirlibs) with your edit.
+Simply open a PR on [this Github project](https://github.com/szTheory/elixirlibs) with your edit. Once it's merged in the website will automatically rebuild and deploy.
 
 ## JSON API
 
