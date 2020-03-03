@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>ElixirLibs | Curated list of libraries</title>
+    <title>ElixirToolbox | Curated list of libraries</title>
     <meta content="A curated list of Elixir libraries by category" name="description">
     <link href="https://fonts.googleapis.com/css?family=Bitter|Lato&display=swap" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet" >
@@ -10,73 +10,61 @@
   </head>
   <body>
     <nav>
-      <a href="https://github.com/szTheory/elixirlibs" class="edit">Submit a change</a>
+      <a href="https://github.com/szTheory/elixirtoolbox" class="edit">Submit a change</a>
       <a id="toggle-night-mode" class="btn" href="">
         <img src="">
       </a>
     </nav>
-
     <main>
-
-    <div id="form-wrapper">
-      <div id="title">
-        <div id='logo-container'>
-          <img src="img/logo.png" class="logo main">
-          <img src="img/logo.png" class="logo glow">
+      <div id="form-wrapper">
+        <div id="title">
+          <div id='logo-container'>
+            <img src="img/logo.png" class="logo main">
+            <img src="img/logo.png" class="logo glow">
+          </div>
+          <div class="text">
+            <h1>ElixirToolbox</h1>
+            <p>A curated list of libraries</p>
+          </div>
         </div>
-        <div class="text">
-          <h1>ElixirLibs</h1>
-          <p>A curated list of libraries</p>
-        </div>
-      </div>
-
-      <form>
-        <input id="search-query" type="text" placeholder="Search for libraries" autofocus>
-      </form>
-
-      <div id="sections-nav">
-        <%= for {section, i} <- Enum.with_index(@sections) do %>
-          <a href="#section-<%= i %>" class='section'><%= section.section_name %></a><%= if i < length(@sections)-1 do %>
-            <code class="separator">▷</code>
+        <form>
+          <input id="search-query" type="text" placeholder="Search for libraries" autofocus>
+        </form>
+        <div id="sections-nav">
+          <%= for {section, i} <- Enum.with_index(@sections) do %>
+            <a href="#section-<%= i %>" class='section'><%= section.section_name %></a><%= if i < length(@sections)-1 do %>
+              <code class="separator">▷</code>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
-    </div>
-
-    <div id="sections">
-
-      <%= for {section, i} <- Enum.with_index(@sections) do %>
-        <div class="section" id="section-<%= i %>">
-          <h2 class="section-name"><%= section.section_name %></h2>
-
-          <%= for category <- section.list do %>
-            <div class="category">
-              <h5 class="category-name"><%= category.name %></h5>
-
-              <%= for {entry, j} <- Enum.with_index(category.entries) do %>
-                <% is_main = j === 0 %>
-                <div class="entry <%= if is_main, do: "main", else: "alt" %>"
+      <div id="sections">
+        <%= for {section, i} <- Enum.with_index(@sections) do %>
+          <div class="section" id="section-<%= i %>">
+            <h2 class="section-name"><%= section.section_name %></h2>
+            <%= for category <- section.list do %>
+              <div class="category">
+                <h5 class="category-name"><%= category.name %></h5>
+                <%= for {entry, j} <- Enum.with_index(category.entries) do %>
+                  <% is_main = j === 0 %>
+                  <div class="entry <%= if is_main, do: "main", else: "alt" %>"
                   data-search="<%= String.downcase(entry.name) %>
                                <%= String.downcase(category.name) %>">
-                  <% icon_name = if entry.type === :elixir, do: "ex", else: "erl" %>
-                  <% size_px = 20 %>
-
-                  <img src="img/<%= icon_name %>.png" width="<%= size_px %>" height="<%= size_px %>" class="icon-<%= entry.type %>"><a href="<%= entry.url %>" class="project-link <%= if is_main, do: "main", else: "alt" %>">
-                    <%= entry.name %>
-                  </a>
-                </div>
-              <% end %>
-
-            </div>
-          <% end %>
-
-        </div>
-      <% end %>
+                    <% icon_name = if entry.type === :elixir, do: "ex", else: "erl" %>
+                    <% size_px = 20 %>
+                    <img src="img/<%= icon_name %>.png" width="<%= size_px %>" height="<%= size_px %>" class="icon-<%= entry.type %>"><a href="<%= entry.url %>" class="project-link <%= if is_main, do: "main", else: "alt" %>">
+                      <%= entry.name %>
+                    </a>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
       </main>
     </div>
-
     <footer>
-      <a href="https://github.com/szTheory/elixirlibs.com">Website source</a>
+      <a href="https://github.com/szTheory/elixirtoolbox.dev">Website source</a>
       <code class="separator">▷</code>
       <a href="index.json">JSON API</a>
     </footer>

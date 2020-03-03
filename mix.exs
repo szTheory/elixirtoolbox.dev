@@ -3,7 +3,7 @@ defmodule Website.MixProject do
 
   def project do
     [
-      app: :elixirlibswebsite,
+      app: :elixirtoolboxwebsite,
       version: "0.1.0",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,

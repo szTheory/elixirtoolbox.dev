@@ -21,6 +21,7 @@ erl_crash.dump
 
 # Ignore package tarball (built via "mix hex.build").
 elixirlibswebsite-*.tar
+elixirtoolboxwebsite-*.tar
 
 
 .elixir_ls
