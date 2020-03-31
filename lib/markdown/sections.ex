@@ -18,7 +18,7 @@ defmodule Markdown.Sections do
   }
 
   Each entry looks like this.
-  %{type: :elixir, url: "https://hex.pm/packages/mandrill"}
+  %{language: :elixir, url: "https://hex.pm/packages/mandrill"}
   """
   def list do
     markdown_sections()

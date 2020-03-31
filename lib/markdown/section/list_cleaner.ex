@@ -5,24 +5,32 @@ defmodule Markdown.Section.ListCleaner do
   """
 
   # TODO: alphabetically sort by category name within each section
-  # TODO: sort by language within each list item
+
   def hashify_section_list(raw_section_list) do
-    # {:ok, html_doc, []} = Earmark.as_html(section_list)
-    # html_doc
     raw_section_list
     |> clean_section_list
-    |> Enum.map(fn x ->
-      {:ok, html, _} = Earmark.as_html(x)
-
-      html
-      |> ListItemHtmlParser.hash_from_list_item_html()
+    |> Enum.map(fn markdown_list_item ->
+      hash_from_markdown_list_item(markdown_list_item)
+      # throw(val)
     end)
     |> List.flatten()
+
+    # |> Enum.sort(fn list_item ->
+    #   throw(list_item)
+    # end)
   end
 
   defp clean_section_list(raw_section_list) do
     section_rows(raw_section_list)
     |> reject_blank
+  end
+
+  # TODO: sort by language within each list item
+  defp hash_from_markdown_list_item(markdown_list_item) do
+    {:ok, html, _} = Earmark.as_html(markdown_list_item)
+
+    html
+    |> ListItemHtmlParser.hash_from_list_item_html()
   end
 
   defp section_rows(raw_section_list) do

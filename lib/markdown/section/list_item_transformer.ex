@@ -20,6 +20,6 @@ defmodule Markdown.Section.ListItemTransformer do
   defp expand_list_item(list_item) do
     list_item
     |> Map.put(:name, ListItemNameParser.parse_name(list_item))
-    |> Map.put(:type, ListItemLanguageParser.parse_language(list_item))
+    |> Map.put(:language, ListItemLanguageParser.parse_language(list_item))
   end
 end

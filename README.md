@@ -1,6 +1,6 @@
 # ElixirToolbox Website
 
-Website for https://elixirtoolbox.dev, a curated list of Elixir libraries. Inspired by [Ruby Toolbox](https://ruby-toolbox.com) and [Clojure Toolbox](https://clojure-toolbox.com).
+Website for [elixirtoolbox.dev](https://elixirtoolbox.dev), a curated list of Elixir libraries. Inspired by [Ruby Toolbox](https://ruby-toolbox.com) and [Clojure Toolbox](https://clojure-toolbox.com).
 
 ## Suggest a change
 
@@ -8,7 +8,7 @@ Simply open a PR on [the BEAM Toolbox Github project](https://github.com/szTheor
 
 ## JSON API
 
-A JSON API is available here https://elixirtoolbox.dev/index.json
+A JSON API is available [here](https://elixirtoolbox.dev/index.json)
 
 ## Build website
 
@@ -17,7 +17,3 @@ To build the website, run this command.
     mix generate
 
 It will output the results to `build/*`. Then you can view the website at `build/index.html` or `build/index.json`.
-
-## TODO
-
-- Add favicon.ico

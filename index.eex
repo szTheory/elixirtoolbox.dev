@@ -50,9 +50,9 @@
                   <div class="entry <%= if is_main, do: "main", else: "alt" %>"
                   data-search="<%= String.downcase(entry.name) %>
                                <%= String.downcase(category.name) %>">
-                    <% icon_name = if entry.type === :elixir, do: "ex", else: "erl" %>
+                    <% icon_name = if entry.language === :elixir, do: "ex", else: "erl" %>
                     <% size_px = 20 %>
-                    <img src="img/<%= icon_name %>.png" width="<%= size_px %>" height="<%= size_px %>" class="icon-<%= entry.type %>"><a href="<%= entry.url %>" class="project-link <%= if is_main, do: "main", else: "alt" %>">
+                    <img src="img/<%= icon_name %>.png" width="<%= size_px %>" height="<%= size_px %>" class="icon-<%= entry.language %>"><a href="<%= entry.url %>" class="project-link <%= if is_main, do: "main", else: "alt" %>">
                       <%= entry.name %>
                     </a>
                   </div>
