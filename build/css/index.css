@@ -201,6 +201,9 @@ h2 {
 	font-size: 26px;
 	font-family: 'Bitter', Georgia, 'Times New Roman', Times, serif;
 }
+.section .hide {
+	display: none;
+}
 
 .main, .alt {
 	padding: 4px;

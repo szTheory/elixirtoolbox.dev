@@ -88,6 +88,25 @@ function updateInputCallback(event) {
   query === ""
     ? showProjects({ projects: projects })
     : showMatchingProjects({ projects: projects, query: query });
+
+  updateSectionsVisibility();
+}
+
+const SECTIONS_QUERY_SELECTOR = "#sections .section";
+const CATEGORIES_VISIBLE_SELECTOR = ".category:not(.hide)";
+const SECTION_HIDE_CLASS = "hide";
+
+function updateSectionsVisibility() {
+  const sections = document.querySelectorAll(SECTIONS_QUERY_SELECTOR);
+  sections.forEach(sectionElem => {
+    const numVisibleCategories = sectionElem.querySelectorAll(
+      CATEGORIES_VISIBLE_SELECTOR
+    ).length;
+
+    numVisibleCategories == 0
+      ? sectionElem.classList.add(SECTION_HIDE_CLASS)
+      : sectionElem.classList.remove(SECTION_HIDE_CLASS);
+  });
 }
 
 // DEBOUNCE
