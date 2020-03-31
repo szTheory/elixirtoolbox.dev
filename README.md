@@ -17,3 +17,13 @@ To build the website, run this command.
     mix generate
 
 It will output the results to `build/*`. Then you can view the website at `build/index.html` or `build/index.json`.
+
+## Run website locally
+
+```bash
+mix generate
+cd build
+ruby -run -e httpd . -p 9090
+```
+
+Then open http://localhost:9090 in your browser.
