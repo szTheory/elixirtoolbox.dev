@@ -96,6 +96,7 @@ const SECTIONS_QUERY_SELECTOR = "#sections .section";
 const CATEGORIES_VISIBLE_SELECTOR = ".category:not(.hide)";
 const SECTION_HIDE_CLASS = "hide";
 
+// SECTION VISIBILITY UPDATE
 function updateSectionsVisibility() {
   const sections = document.querySelectorAll(SECTIONS_QUERY_SELECTOR);
   sections.forEach(sectionElem => {
@@ -123,6 +124,53 @@ function searchBarInit() {
   ["change", "keyup", "paste", "input"].forEach(function(eventName) {
     formInput.addEventListener(eventName, debouncedCallback);
   });
+}
+
+// HOVER CALLBACK
+function setupHoverCallback() {
+  document.addEventListener("mouseover", event => {
+    if (event.target.classList.contains("project-link")) {
+      const anchorElem = event.target;
+      const url = anchorElem.getAttribute("href");
+
+      if (url.includes("hex.pm")) {
+        const packageName = anchorElem.innerText;
+        console.log(packageName);
+        getHexPackageInfo({ packageName: packageName });
+      }
+    }
+  });
+}
+
+// HEX.PM HOVER TOOLTIP
+
+function buildHoverTooltip() {}
+
+function updateHoverTooltip() {}
+
+const HEX_PM_BASE_URL = "https://hex.pm/api/packages";
+let hexPackageInfoCache = {};
+async function getHexPackageInfo({ packageName }) {
+  const apiUrl = `${HEX_PM_BASE_URL}/${packageName}`;
+  console.log(apiUrl);
+
+  // let headers = new Headers();
+  // headers.append("User-Agent", "ElixirToolbox.dev");
+  // headers.append("Content-Type", "application/json");
+
+  const response = await fetch(apiUrl, {
+    method: "GET",
+    // mode: "cors",
+    cache: "default",
+    headers: {
+      "Content-Type": "application/json",
+      "User-Agent": "ElixirToolbox.dev"
+    }
+  });
+  console.log(response);
+  const result = await response.json();
+  console.log(result);
+  return result;
 }
 
 // PREVENT FORM SUBMIT
@@ -247,7 +295,12 @@ function initDarkMode() {
 // INIT
 function init() {
   runManyAsap({
-    callbackFunctions: [searchBarInit, initDarkMode, preventFormSubmit]
+    callbackFunctions: [
+      searchBarInit,
+      initDarkMode,
+      preventFormSubmit,
+      setupHoverCallback
+    ]
   });
 }
 init();

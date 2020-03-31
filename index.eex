@@ -12,7 +12,7 @@
   </head>
   <body>
     <nav>
-      <a href="https://github.com/szTheory/elixirtoolbox" class="edit">Submit a change</a>
+      <a href="https://github.com/szTheory/beamtoolbox" class="edit">Submit a change</a>
       <a id="toggle-night-mode" class="btn" href="">
         <img src="">
       </a>
