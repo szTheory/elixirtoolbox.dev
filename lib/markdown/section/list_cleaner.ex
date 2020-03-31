@@ -4,20 +4,21 @@ defmodule Markdown.Section.ListCleaner do
   them from the individual markdown list item into an Elixir data structure
   """
 
-  # TODO: alphabetically sort by category name within each section
-
   def hashify_section_list(raw_section_list) do
     raw_section_list
     |> clean_section_list
     |> Enum.map(fn markdown_list_item ->
       hash_from_markdown_list_item(markdown_list_item)
-      # throw(val)
     end)
     |> List.flatten()
+    |> sort_sections_by_name
+  end
 
-    # |> Enum.sort(fn list_item ->
-    #   throw(list_item)
-    # end)
+  defp sort_sections_by_name(section_list) do
+    section_list
+    |> Enum.sort(fn x, y ->
+      x[:name] < y[:name]
+    end)
   end
 
   defp clean_section_list(raw_section_list) do
