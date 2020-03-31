@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Bitter|Lato&display=swap" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet" >
     <script src="js/index.js" async defer></script>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   </head>
   <body>
     <nav>
