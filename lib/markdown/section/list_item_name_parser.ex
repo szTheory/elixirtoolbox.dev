@@ -14,22 +14,40 @@ defmodule Markdown.Section.ListItemNameParser do
   # the name of the package is "dice"
   defp name_for_url(url) do
     if can_infer_name_for_url?(url) do
-      url
-      |> String.replace(~r/\/+$/, "")
-      |> String.split("/")
-      |> List.last()
-      |> String.replace("https://hexdocs.pm/elixir/Kernel.html", "Elixir Standard Library")
-      |> String.replace("http://erlang.org/doc/apps/stdlib/index.html", "Erlang Standard Library")
-      |> String.replace("https://marketplace.visualstudio.com/items?itemName=", "")
-      |> String.replace(".html", "")
-      |> String.trim()
+      case url do
+        "https://hexdocs.pm/elixir/Kernel.html" ->
+          "Elixir Standard Library"
+
+        "http://erlang.org/doc/apps/stdlib/index.html" ->
+          "Erlang Standard Library"
+
+        _ ->
+          if String.contains?(url, "marketplace.visualstudio.com") do
+            String.replace(url, "https://marketplace.visualstudio.com/items?itemName=", "")
+          else
+            url
+            |> String.replace(~r/\/+$/, "")
+            |> String.split("/")
+            |> List.last()
+            |> String.replace(".html", "")
+            |> String.trim()
+          end
+      end
     else
       url
     end
   end
 
   defp can_infer_name_for_url?(url) do
-    ["github.com", "hex.pm", "hexdocs.pm", "gitlab.com", "bitbucket.org", "gitgud.io"]
+    [
+      "github.com",
+      "hex.pm",
+      "hexdocs.pm",
+      "gitlab.com",
+      "bitbucket.org",
+      "gitgud.io",
+      "marketplace.visualstudio.com"
+    ]
     |> Enum.any?(&String.contains?(url, &1))
   end
 end
