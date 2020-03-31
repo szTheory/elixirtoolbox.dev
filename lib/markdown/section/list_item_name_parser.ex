@@ -18,13 +18,18 @@ defmodule Markdown.Section.ListItemNameParser do
       |> String.replace(~r/\/+$/, "")
       |> String.split("/")
       |> List.last()
+      |> String.replace("https://hexdocs.pm/elixir/Kernel.html", "Elixir Standard Library")
+      |> String.replace("http://erlang.org/doc/apps/stdlib/index.html", "Erlang Standard Library")
+      |> String.replace("https://marketplace.visualstudio.com/items?itemName=", "")
+      |> String.replace(".html", "")
+      |> String.trim()
     else
       url
     end
   end
 
   defp can_infer_name_for_url?(url) do
-    ["github.com", "hex.pm", "gitlab.com", "bitbucket.org", "gitgud.io"]
+    ["github.com", "hex.pm", "hexdocs.pm", "gitlab.com", "bitbucket.org", "gitgud.io"]
     |> Enum.any?(&String.contains?(url, &1))
   end
 end
