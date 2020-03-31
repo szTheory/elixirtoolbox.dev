@@ -23,7 +23,7 @@ defmodule ListItemHtmlParser do
 
   defp category_name(html) do
     name =
-      Regex.run(~r/\<li\>(.+)\<a/, html)
+      Regex.run(~r/\<li\>(.+) \<a/, html)
       |> Enum.at(1)
       |> String.trim()
 
