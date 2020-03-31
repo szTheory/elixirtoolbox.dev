@@ -4,7 +4,7 @@ Website for https://elixirtoolbox.dev, a curated list of Elixir libraries. Inspi
 
 ## Suggest a change
 
-Simply open a PR on [this Github project](https://github.com/szTheory/elixirtoolbox) with your edit. Once it's merged in the website will automatically rebuild and deploy.
+Simply open a PR on [the BEAM Toolbox Github project](https://github.com/szTheory/beamtoolbox) with your edit. Once it's merged in the website will automatically rebuild and deploy.
 
 ## JSON API
 

@@ -1,4 +1,8 @@
 defmodule Mix.Tasks.Generate do
+  @moduledoc """
+  Mix task to download the README file and generate website HTML
+  """
+
   use Mix.Task
 
   @shortdoc "Generate the website."

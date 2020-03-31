@@ -1,4 +1,9 @@
 defmodule Markdown.Builder do
+  @moduledoc """
+  Build Markdown for the entire document by getting the README text
+  and removing the header and footer
+  """
+
   @text_after_header "## General Libraries"
   @text_footer_start "---"
 

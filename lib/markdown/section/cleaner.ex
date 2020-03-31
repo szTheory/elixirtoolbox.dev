@@ -1,4 +1,8 @@
 defmodule Markdown.Section.Cleaner do
+  @moduledoc """
+  Clean up the Markdown text for a README section
+  """
+
   alias Markdown.Section.ListCleaner
   alias Markdown.Section.NameCleaner
 

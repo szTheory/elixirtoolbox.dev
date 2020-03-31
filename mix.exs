@@ -1,4 +1,8 @@
 defmodule Website.MixProject do
+  @moduledoc """
+  Elixir project specification for ElixirToolbox website
+  """
+
   use Mix.Project
 
   def project do

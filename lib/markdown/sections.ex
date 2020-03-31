@@ -1,11 +1,14 @@
 defmodule Markdown.Sections do
+  @moduledoc """
+  Build a list of all library by section (category)
+  """
   alias Markdown.Section
 
   @doc """
   A list of entries, by section.
   {
     list: [
-      %{entries: [%{num: 1, ...}], name: "GeoNames API client"},
+      %{entries: [%{...}], name: "GeoNames API client"},
       %{entries: [%{...}], name: "Git hosting (GitHub)"},
       %{entries: [...], ...},
       %{...},
@@ -15,16 +18,13 @@ defmodule Markdown.Sections do
   }
 
   Each entry looks like this.
-  %{num: 1, type: :elixir, url: "https://hex.pm/packages/mandrill"}
-
-  Entries are sorted by :num within their type (:elixir or :erlang)
+  %{type: :elixir, url: "https://hex.pm/packages/mandrill"}
   """
   def list do
     markdown_sections()
   end
 
   defp markdown_sections do
-    # TODO: alphabetically sort by category name within each section
     Markdown.Builder.build_markdown()
     |> split_by_section
     |> Enum.chunk_every(2)

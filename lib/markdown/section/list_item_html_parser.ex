@@ -1,4 +1,8 @@
 defmodule ListItemHtmlParser do
+  @moduledoc """
+  Build hash representation of category from HTML row
+  """
+
   alias Markdown.Section.BaseListItems
   alias Markdown.Section.ListItemTransformer
 
@@ -7,7 +11,15 @@ defmodule ListItemHtmlParser do
   """
   def hash_from_list_item_html(html) do
     list = base_list_items(html)
-    category_name = category_name(list)
+
+    category_name =
+      try do
+        category_name(list)
+      rescue
+        BadMapError -> throw(html)
+      end
+
+    # category_name = category_name(list)
     entries = transform_base_list(list)
 
     %{name: category_name, entries: entries}
